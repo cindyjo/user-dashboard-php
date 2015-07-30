@@ -1,0 +1,56 @@
+
+.header_nav, 
+#start_button{
+	text-decoration: none;
+}
+.bar {
+	border-top: 2px solid silver;
+	margin-bottom: 20px;
+}
+.jumbotron {
+	border: 5px solid silver;
+}
+#signin_header,
+#register_header,
+#admin_header, 
+#new_header,
+#user_name{
+	margin-bottom: 30px;
+}
+#admin_header, #admin_form {
+	display: inline-block;
+
+}
+
+#signin_button,
+#register_button,
+#create_button {
+	margin-bottom: 30px;
+	margin-left: 220px;
+}
+
+a {
+	text-decoration: underline;
+}
+
+#admin_table th,
+#users_table th {
+	background-color: silver;
+}
+#errors p, #success{
+	color: red;
+
+}
+#errors {
+	border: 1px solid silver;
+}
+.info{
+	display: inline-block;
+	width: 120px;
+	font-weight: bold;
+}
+
+.post_message, .post_comment {
+	padding: 10px;
+	border: 1px solid silver;
+}
