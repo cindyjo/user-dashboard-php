@@ -1,7 +1,10 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$route['default_controller'] = "/tests";
 $route['404_override'] = '';
+// $route['default_controller'] = "users";
+$route['default_controller'] = "/tests";
+//routes for login/registration
+
 $route['home'] = '/tests';
 $route['signin'] = '/tests/signin';
 $route['register'] = '/tests/register';

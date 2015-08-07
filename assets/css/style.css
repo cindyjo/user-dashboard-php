@@ -1,15 +1,63 @@
+body { 
+	padding-top: 50px; 
+}
+/*nav styling */
+#nav {
+	padding: 0px 50px;
+}
+
+/*index page styling*/
+.item{
+    background: #333;    
+    height: 500px 
+}
+.carousel-caption{
+	width: 100%;
+	left: 0;
+	right: 0;
+}
+#signin-button {
+	margin-bottom: 40px;
+	background-color: #757575;
+}
+.btn {
+	background-color: #757575;
+}
+#first_caro, 
+#second_caro {
+	text-align: left;
+	margin-bottom: 80px;
+}
+
+#third_caro {
+	text-align: left;
+	margin-bottom: 195px;	
+}
+h2{
+    margin: 0;     
+    color: #666;
+    padding-top: 90px;
+    font-size: 52px;
+    font-family: "trebuchet ms", sans-serif;    
+}
+h1 {
+	font-size: 45px;
+}
+.p-cap {
+	font-size: 20px;
+}
+#panel {
+	margin-top: 20px;
+}
+.panel-body {
+	height: 100px;
+}
 
 .header_nav, 
 #start_button{
 	text-decoration: none;
 }
-.bar {
-	border-top: 2px solid silver;
-	margin-bottom: 20px;
-}
-.jumbotron {
-	border: 5px solid silver;
-}
+
 #signin_header,
 #register_header,
 #admin_header, 
@@ -22,16 +70,6 @@
 
 }
 
-#signin_button,
-#register_button,
-#create_button {
-	margin-bottom: 30px;
-	margin-left: 220px;
-}
-
-a {
-	text-decoration: underline;
-}
 
 #admin_table th,
 #users_table th {
@@ -54,3 +92,17 @@ a {
 	padding: 10px;
 	border: 1px solid silver;
 }
+
+/*footer styling*/
+.footer {
+	background-color: #AA3F36;
+	color: #e0e0e0;
+	padding-top: 10px;
+	margin-top: 60px;
+}
+
+#footer-text {
+	text-align: center;
+	font-family: 10px;
+}
+
