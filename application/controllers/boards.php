@@ -1,11 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Tests extends CI_Controller {
+class Boards extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->output->enable_profiler();
+		// $this->output->enable_profiler();
 	}
 
 	public function index()
@@ -15,14 +15,6 @@ class Tests extends CI_Controller {
 	public function home() 
 	{
 		$this->load->view('index');
-	}
-	public function signin()
-	{
-		$this->load->view('signin');
-	}
-	public function register()
-	{
-		$this->load->view('register');
 	}
 	public function users_edit()
 	{
@@ -63,38 +55,38 @@ class Tests extends CI_Controller {
 			redirect('/signin');
 		}
 	}
-	public function login()
-	{
-		$this->load->model('test');
-		if($this->test->validate_login($this->input->post())===FALSE)
-		{
-			$this->session->set_flashdata('errors', validation_errors());
-		}
+	// public function login()
+	// {
+	// 	$this->load->model('test');
+	// 	if($this->test->validate_login($this->input->post())===FALSE)
+	// 	{
+	// 		$this->session->set_flashdata('errors', validation_errors());
+	// 	}
 
-		$user = $this->test->find_user($this->input->post());
-		$this->session->set_userdata('logged_user', $user);
+	// 	$user = $this->test->find_user($this->input->post());
+	// 	$this->session->set_userdata('logged_user', $user);
 
-		if($user)
-		{
-			$this->session->set_flashdata('homepage', "you made it!");
-			if($user['user_level'] === 'Normal')
-			{
-				$this->session->set_userdata('user_id', $user['id']);
+	// 	if($user)
+	// 	{
+	// 		$this->session->set_flashdata('homepage', "you made it!");
+	// 		if($user['user_level'] === 'Normal')
+	// 		{
+	// 			$this->session->set_userdata('user_id', $user['id']);
 
-				redirect('/dashboard');
-			}
+	// 			redirect('/dashboard');
+	// 		}
 			
-			if($user['user_level'] === 'Admin')
-			{
-				$this->session->set_userdata('user_id', $user['id']);
-				redirect('/admin');
-			}
-		}
+	// 		if($user['user_level'] === 'Admin')
+	// 		{
+	// 			$this->session->set_userdata('user_id', $user['id']);
+	// 			redirect('/admin');
+	// 		}
+	// 	}
 
-		$this->session->set_flashdata('errors', 'No user with those email and password');
-		redirect('/signin');	
+	// 	$this->session->set_flashdata('errors', 'No user with those email and password');
+	// 	redirect('/signin');	
 
-	}
+	// }
 	public function user_edit_information()
 	{
 		$this->load->model('test');

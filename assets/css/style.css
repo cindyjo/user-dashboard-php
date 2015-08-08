@@ -16,13 +16,12 @@ body {
 	left: 0;
 	right: 0;
 }
-#signin-button {
+#login-button, 
+#register-button{
 	margin-bottom: 40px;
 	background-color: #757575;
 }
-.btn {
-	background-color: #757575;
-}
+
 #first_caro, 
 #second_caro {
 	text-align: left;
@@ -33,13 +32,7 @@ body {
 	text-align: left;
 	margin-bottom: 195px;	
 }
-h2{
-    margin: 0;     
-    color: #666;
-    padding-top: 90px;
-    font-size: 52px;
-    font-family: "trebuchet ms", sans-serif;    
-}
+
 h1 {
 	font-size: 45px;
 }
@@ -49,27 +42,37 @@ h1 {
 #panel {
 	margin-top: 20px;
 }
-.panel-body {
+.panel-index {
 	height: 100px;
 }
 
-.header_nav, 
-#start_button{
-	text-decoration: none;
+/*login page styling*/
+.login-main {
+	padding-bottom: 16%;
+}
+.header{
+	font-family: "trebuchet ms", sans-serif; 
+	font-size: 25px;
+	margin:10px 0px;
+}
+.user-panel {
+	margin-top: 30px;
 }
 
-#signin_header,
+
+
 #register_header,
 #admin_header, 
 #new_header,
 #user_name{
-	margin-bottom: 30px;
+	margin: 20px 0px;
+	font-family: "trebuchet ms", sans-serif;  
+
 }
 #admin_header, #admin_form {
 	display: inline-block;
 
 }
-
 
 #admin_table th,
 #users_table th {

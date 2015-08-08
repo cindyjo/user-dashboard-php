@@ -1,15 +1,16 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 $route['404_override'] = '';
-// $route['default_controller'] = "users";
-$route['default_controller'] = "/tests";
-//routes for login/registration
+$route['default_controller'] = "/boards";
 
-$route['home'] = '/tests';
-$route['signin'] = '/tests/signin';
-$route['register'] = '/tests/register';
+
+//routes for login/registration
+$route['login'] = '/users/login';
+$route['register'] = '/users/register';
+
+$route['home'] = '/boards';
 $route['user_register'] = '/tests/create';
-$route['login']='/tests/login';
+// $route['login']='/tests/login';
 $route['dashboard'] = '/tests/dashboard';
 $route['users_edit']='/tests/users_edit';
 $route['user_edit_information']='/tests/user_edit_information';
