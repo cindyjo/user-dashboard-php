@@ -3,28 +3,26 @@
 $route['404_override'] = '';
 $route['default_controller'] = "/boards";
 
-
 //routes for login/registration
 $route['login'] = '/users/login';
 $route['register'] = '/users/register';
+$route['login_process']='/users/loginProcess';
+$route['register_process'] = '/users/create';
 
-$route['home'] = '/boards';
-$route['user_register'] = '/tests/create';
-// $route['login']='/tests/login';
-$route['dashboard'] = '/tests/dashboard';
-$route['users_edit']='/tests/users_edit';
-$route['user_edit_information']='/tests/user_edit_information';
-$route['user_edit_password'] = '/tests/user_edit_password';
-$route['user_edit_description']='/tests/user_edit_description';
-$route['admin'] = '/tests/dashboard_admin';
-$route['new'] = '/tests/add_new';
-$route['show/(:any)'] = '/tests/show/$1';
-$route['edit/(:any)'] = '/tests/admin_edit/$1';
-$route['delete/(:any)'] = '/tests/remove/$1';
-$route['admin_edit/(:any)'] = '/tests/admin_edit/$1';
-$route['admin_edit_information/(:any)']='/tests/admin_edit_information/$1';
-$route['admin_edit_password/(:any)'] = '/tests/admin_edit_password/$1';
-$route['post_message/(:any)'] = '/tests/post/$1';
-$route['post_comment/(:any)'] = '/tests/comment/$1';
-$route['logoff'] = '/tests/destroy';
-//end of routes.php
+//routes for dashboard
+$route['dashboard'] = '/boards/dashboard';
+$route['users_edit']='/boards/users_edit';
+$route['user_edit_information']='/boards/user_edit_information';
+$route['user_edit_password'] = '/boards/user_edit_password';
+$route['user_edit_description']='/boards/user_edit_description';
+$route['admin'] = '/boards/dashboard_admin';
+$route['new'] = '/boards/add_new';
+$route['show/(:any)'] = '/boards/show/$1';
+$route['edit/(:any)'] = '/boards/admin_edit/$1';
+$route['delete/(:any)'] = '/boards/remove/$1';
+$route['admin_edit/(:any)'] = '/boards/admin_edit/$1';
+$route['admin_edit_information/(:any)']='/boards/admin_edit_information/$1';
+$route['admin_edit_password/(:any)'] = '/boards/admin_edit_password/$1';
+$route['post_message/(:any)'] = '/boards/post/$1';
+$route['post_comment/(:any)'] = '/boards/comment/$1';
+$route['logoff'] = '/boards/destroy';

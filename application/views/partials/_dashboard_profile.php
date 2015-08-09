@@ -1,24 +1,33 @@
-<div class="row">
-	<div class="col-md-10">
-		<ul class="nav nav-pills">
-			<li><h4>Test App</h4></li>
-<?php 		if($this->session->userdata['logged_user']['user_level'] === 'Normal')
-			{ ?>
-				<li role="presentation"><a class = "header_nav" href="/dashboard">Dashboard</a></li>
-				<li role="presentation"><a class = "header_nav" href="/users_edit">Profile</a></li>
-<?php		}
-			if($this->session->userdata['logged_user']['user_level'] === 'Admin')
-			{ ?>
-				<li role="presentation"><a class = "header_nav" href="/admin">Dashboard</a></li>
-				<li role="presentation"><a class = "header_nav" href="/users_edit">Profile</a></li>
-<?php 		} ?>
-		</ul>
-	</div>
-	<div class="col-md-2">
-		<ul class="nav nav-pills navbar-right">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+ 	<div id="nav" class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    	<div class="navbar-header">
+      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        		<span class="sr-only">Toggle navigation</span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+      		</button>
+      		<a class="navbar-brand" href="/">Dashboard</a>
+    	</div>
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">	     
+	      	<ul class="nav navbar-nav navbar-left">
+<?php 			if($this->session->userdata['logged_user']['user_level'] === 'Normal')
+				{ ?>
+					<li role="presentation"><a class = "header_nav" href="/dashboard">Dashboard</a></li>
+					<li role="presentation"><a class = "header_nav" href="/users_edit">Profile</a></li>
+<?php			}
+				if($this->session->userdata['logged_user']['user_level'] === 'Admin')
+				{ ?>
+					<li role="presentation"><a class = "header_nav" href="/admin">Dashboard</a></li>
+					<li role="presentation"><a class = "header_nav" href="/users_edit">Profile</a></li>
+<?php 			} ?>
+	      	</ul>
+	      	<ul class="nav navbar-nav navbar-right">
 				<li id = "log_off" role="presentation"><a class = "header_nav" href="/logoff">Log Off</a></li>
-			</ul>
-	</ul>
-	</div>
-</div> <!--end of row-->
-<div class="bar"></div>
+	      	</ul>
+	    </div><!-- .navbar-collapse -->
+  	</div><!-- .container-fluid -->
+</nav>
+<div class="space"></div>

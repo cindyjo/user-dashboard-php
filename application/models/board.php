@@ -1,39 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Board extends CI_Model {
-	//validation for registration
-	public function validate_reg($post)
-	{
-		$this->load->library('form_validation');
-		$this->form_validation->set_rules('email', "Email", 'required|valid_email|is_unique[users.email]');
-		$this->form_validation->set_rules('first_name', "First Name", 'trim|required|alpha');
-		$this->form_validation->set_rules('last_name', "Last Name", 'trim|required|alpha');
-		$this->form_validation->set_rules('password', "Password", 'trim|required|min_length[6]|matches[confirm_password]|md5');
-		$this->form_validation->set_rules('confirm_password', "Confirm Password", 'trim|required');
-		if($this->form_validation->run()===FALSE)
-		{
-			return FALSE;
-		}
-		else
-		{
-			return TRUE;
-		}
-	}
-	//validation for login
-	public function validate_login($post)
-	{
-		$this->load->library('form_validation');
-		$this->form_validation->set_rules('email', "Email", 'required|valid_email');
-		$this->form_validation->set_rules('password', "Password", 'trim|required|md5');
-		if($this->form_validation->run()===FALSE)
-		{
-			return FALSE;
-		}
-		else
-		{
-			return TRUE;
-		}
-	}
 	//validation for editing user information
 	public function validate_user_information($post)
 	{
@@ -107,20 +74,6 @@ class Board extends CI_Model {
 			return TRUE;
 		}
 	}
-
-	//query for adding a new user to the database.
-	public function create($userinfo)
-	{	
-		$query = "INSERT INTO users (email, first_name, last_name, password, user_level, created_at, updated_at) VALUES (?, ?, ?, ?, 'Normal', NOW(), NOW())";
-		$this->db->query($query, $userinfo);
-	}
-	//query for getting information of logged-in user.
-	public function find_user($userinfo)
-	{
-		$query = "SELECT * FROM users WHERE email=? AND password =?";
-		$values= array($userinfo['email'], $userinfo['password']);
-		return $this->db->query($query, $values)->row_array();
-	}
 	// query for getting all registered users 
 	public function get_all_users()
 	{
@@ -164,19 +117,20 @@ class Board extends CI_Model {
 		$values = array($user['email'], $user['first_name'], $user['last_name'],$user['user_level'], $id);
 		$this->db->query($query, $values);
 	}
+	// query for posting message
 	public function post($message)
 	{
 		$query = "INSERT INTO messages (message, created_at, updated_at, user_id, owner_id) VALUES (?, NOW(), NOW(), ?, ?)";
 		$values = array($message['message'], $this->session->userdata['logged_user']['id'], $message['owner_id']);
 		$this->db->query($query, $values);
 	}
-
+	// query for getting all messages by user id
 	public function get_messages($id)
 	{
 		$query = "SELECT CONCAT(users.first_name, ' ', users.last_name) AS name, messages.message, messages.created_at, messages.id FROM messages LEFT JOIN users ON messages.user_id = users.id WHERE messages.owner_id = ? ORDER BY messages.created_at DESC";
 		return $this->db->query($query, $id)->result_array();
 	}
-
+	// query for posting comment
 	public function post_comment($comment)
 	{
 		$query = "INSERT INTO comments (comment, created_at, updated_at, message_id, user_id) 
@@ -184,6 +138,7 @@ class Board extends CI_Model {
 		$values = array($comment['comment'], $comment['message_id'], $this->session->userdata['logged_user']['id']);	
 		$this->db->query($query, $values);				
 	}
+	// query for getting all comments by message id
 	public function get_comments($message_id)
 	{
 		$query = "SELECT CONCAT(users.first_name, ' ', users.last_name) AS name, comments.comment, comments.created_at 

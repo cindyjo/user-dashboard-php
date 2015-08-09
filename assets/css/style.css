@@ -5,7 +5,9 @@ body {
 #nav {
 	padding: 0px 50px;
 }
-
+.space {
+	margin-bottom: 30px;
+}
 /*index page styling*/
 .item{
     background: #333;    
@@ -55,11 +57,6 @@ h1 {
 	font-size: 25px;
 	margin:10px 0px;
 }
-.user-panel {
-	margin-top: 30px;
-}
-
-
 
 #register_header,
 #admin_header, 
@@ -78,22 +75,21 @@ h1 {
 #users_table th {
 	background-color: silver;
 }
-#errors p, #success{
-	color: red;
-
+.errors, .success{
+	font-size: 12px;
+	margin-left: 15px;
+	line-height: 6px;
 }
-#errors {
-	border: 1px solid silver;
+.errors {
+	color: red;
+}
+.success {
+	color: green;
 }
 .info{
 	display: inline-block;
 	width: 120px;
 	font-weight: bold;
-}
-
-.post_message, .post_comment {
-	padding: 10px;
-	border: 1px solid silver;
 }
 
 /*footer styling*/

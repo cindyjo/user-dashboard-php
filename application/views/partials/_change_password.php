@@ -6,4 +6,4 @@
 	<label for="confirm_password">Password Confirmation: </label>
 	<input type="password" class="form-control" name="confirm_password">
 </div>
-<button type="submit" class="btn btn-default navbar-right">Update Password</button>
+<button type="submit" class="btn btn-default pull-right">Update Password</button>
